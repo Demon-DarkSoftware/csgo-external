@@ -1,0 +1,22 @@
+﻿  imgui.cpp
+  imgui_draw.cpp
+  config.cpp
+  FireGameEvent.cpp
+  PostDataUpdate.cpp
+  Sequence.cpp
+  imgui_impl_dx9.cpp
+  nSkinz.cpp
+  kit_parser.cpp
+  dllmain.cpp
+  sticker_changer.cpp
+  update_check.cpp
+  platform.cpp
+  render.cpp
+  netvar_manager.cpp
+  gui.cpp
+  item_definitions.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 3212 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  nSkinz.vcxproj -> C:\Users\demon\nSkinz\Release\nSkinz.dll

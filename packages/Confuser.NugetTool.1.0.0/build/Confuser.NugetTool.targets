@@ -1,0 +1,25 @@
+<Project ToolsVersion="15.0" DefaultTargets="Confuser" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="Confuser" AfterTargets="Build" Condition="'$(Configuration)'=='Release'">
+    <PropertyGroup>
+      <Packer>true</Packer>
+      <PackerParameter Condition="'$(Packer)'=='true'">-p compressor</PackerParameter>
+      <CmdPath>$(MSBuildThisFileDirectory)..\confuser\Confuser.CLI.exe</CmdPath>
+      <ProjectFiles>$(TargetFileName)</ProjectFiles>
+      <ProjectFiles Condition="@(ProjectReference->Count())>0">$(TargetFileName) @(ProjectReference->'%(Name)','.dll ').dll</ProjectFiles>
+    </PropertyGroup>
+
+    <Message Text="$(CmdPath) -o Confused $(PackerParameter) $(ProjectFiles)"/>
+    <!-- -->
+    <Exec Command="$(CmdPath) -o Confused -s None -a ctrl_flow -a anti_tamper -a ref_proxy -a anti_debug $(PackerParameter) $(ProjectFiles)" WorkingDirectory="$(TargetDir)"/>
+    <ItemGroup>
+      <FilesToMove Include="$(TargetDir)Confused\*.*" />
+      <FilesToDelete Include="@(ProjectReference->'$(TargetDir)%(Filename).dll')" />
+      <FilesToDelete Include="@(ProjectReference->'$(TargetDir)%(Filename).pdb')" />
+      <!--<FilesToDelete Include="@(ProjectReference->'$(TargetDir)%(Filename).dll.config')" />-->
+    </ItemGroup>
+    <!--<Error Text="@(FilesToDelete)" />-->
+    <Move SourceFiles="@(FilesToMove)" DestinationFolder="$(TargetDir)" OverwriteReadOnlyFiles="true"/>
+    <Delete Files="@(FilesToDelete)" Condition="'$(Packer)'=='true'"/>
+    <RemoveDir Directories="$(TargetDir)Confused"/>
+  </Target>
+</Project>
