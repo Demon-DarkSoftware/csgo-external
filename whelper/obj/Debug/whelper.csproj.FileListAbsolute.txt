@@ -200,3 +200,37 @@ E:\Нова папка\whelper\obj\Debug\whelper.application
 E:\Нова папка\whelper\obj\Debug\whelper.csproj.CopyComplete
 E:\Нова папка\whelper\obj\Debug\whelper.exe
 E:\Нова папка\whelper\obj\Debug\whelper.pdb
+C:\Users\Martin\Desktop\csgo-external\whelper\bin\Debug\whelper.exe.config
+C:\Users\Martin\Desktop\csgo-external\whelper\bin\Debug\whelper.exe.manifest
+C:\Users\Martin\Desktop\csgo-external\whelper\bin\Debug\whelper.application
+C:\Users\Martin\Desktop\csgo-external\whelper\bin\Debug\whelper.exe
+C:\Users\Martin\Desktop\csgo-external\whelper\bin\Debug\whelper.pdb
+C:\Users\Martin\Desktop\csgo-external\whelper\bin\Debug\SharpDX.Desktop.dll
+C:\Users\Martin\Desktop\csgo-external\whelper\bin\Debug\SharpDX.Direct2D1.dll
+C:\Users\Martin\Desktop\csgo-external\whelper\bin\Debug\SharpDX.Direct3D11.dll
+C:\Users\Martin\Desktop\csgo-external\whelper\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\Martin\Desktop\csgo-external\whelper\bin\Debug\SharpDX.dll
+C:\Users\Martin\Desktop\csgo-external\whelper\bin\Debug\SharpDX.DXGI.dll
+C:\Users\Martin\Desktop\csgo-external\whelper\bin\Debug\Bunifu_UI_v1.5.3.xml
+C:\Users\Martin\Desktop\csgo-external\whelper\bin\Debug\dwimI64.pdb
+C:\Users\Martin\Desktop\csgo-external\whelper\bin\Debug\SharpDX.pdb
+C:\Users\Martin\Desktop\csgo-external\whelper\bin\Debug\SharpDX.Desktop.pdb
+C:\Users\Martin\Desktop\csgo-external\whelper\bin\Debug\SharpDX.Desktop.xml
+C:\Users\Martin\Desktop\csgo-external\whelper\bin\Debug\SharpDX.Direct2D1.pdb
+C:\Users\Martin\Desktop\csgo-external\whelper\bin\Debug\SharpDX.Direct2D1.xml
+C:\Users\Martin\Desktop\csgo-external\whelper\bin\Debug\SharpDX.Direct3D11.pdb
+C:\Users\Martin\Desktop\csgo-external\whelper\bin\Debug\SharpDX.Direct3D11.xml
+C:\Users\Martin\Desktop\csgo-external\whelper\bin\Debug\SharpDX.Direct3D9.pdb
+C:\Users\Martin\Desktop\csgo-external\whelper\bin\Debug\SharpDX.Direct3D9.xml
+C:\Users\Martin\Desktop\csgo-external\whelper\bin\Debug\SharpDX.DXGI.pdb
+C:\Users\Martin\Desktop\csgo-external\whelper\bin\Debug\SharpDX.DXGI.xml
+C:\Users\Martin\Desktop\csgo-external\whelper\obj\Debug\whelper.csprojAssemblyReference.cache
+C:\Users\Martin\Desktop\csgo-external\whelper\obj\Debug\whelper.ESPOverlay.resources
+C:\Users\Martin\Desktop\csgo-external\whelper\obj\Debug\whelper.MainWindow.resources
+C:\Users\Martin\Desktop\csgo-external\whelper\obj\Debug\whelper.Settings.resources
+C:\Users\Martin\Desktop\csgo-external\whelper\obj\Debug\whelper.csproj.GenerateResource.cache
+C:\Users\Martin\Desktop\csgo-external\whelper\obj\Debug\whelper.exe.manifest
+C:\Users\Martin\Desktop\csgo-external\whelper\obj\Debug\whelper.application
+C:\Users\Martin\Desktop\csgo-external\whelper\obj\Debug\whelper.csproj.CopyComplete
+C:\Users\Martin\Desktop\csgo-external\whelper\obj\Debug\whelper.exe
+C:\Users\Martin\Desktop\csgo-external\whelper\obj\Debug\whelper.pdb
