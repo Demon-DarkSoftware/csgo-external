@@ -263,8 +263,8 @@ namespace whelper
         public static Items m;
         public static Stats stats;
         static bool flag = false;
-        static IntPtr module = IntPtr.Zero;
-        static IntPtr enginestate = IntPtr.Zero;
+        public static IntPtr module = IntPtr.Zero;
+        public static IntPtr enginestate = IntPtr.Zero;
         static Dictionary<IntPtr, IntPtr> EnemyPlayersGlow = new Dictionary<IntPtr, IntPtr>();
         static List<IntPtr> Weapons = new List<IntPtr>();
         static List<IntPtr> Friends = new List<IntPtr>();
@@ -312,7 +312,7 @@ namespace whelper
                 Console.Title = "";
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine($"Counter-Strike Global Offensive found! ID: {m.Current.Id}");
-                IntPtr moduleAddr = m.GetInsufficentMaterials("client_panorama.dll");
+                IntPtr moduleAddr = m.GetInsufficentMaterials("client.dll");
                 module = moduleAddr;
                 enginestate = m.DeployRope<IntPtr>(m.GetInsufficentMaterials("engine.dll") + Statics.signatures.dwClientState);
                 Console.WriteLine($"Module Address: 0x{moduleAddr.ToString("X")}");
@@ -410,6 +410,10 @@ namespace whelper
                 }
            
            
+        }
+        public static void Print(string message) {
+            Console.Clear();
+            Console.WriteLine(message);
         }
         public static void ACircle(IntPtr moduleAddr) {
             
@@ -639,8 +643,9 @@ namespace whelper
                 OldAngles = new Vector3D(m.DeployRopes<float>(enginestate + Statics.netvars.m_viewPunchAngle, 3));
             }
         }
-        public static void BCircle(IntPtr moduleAddr) {
+        public static void BCircle() {
             int currentTarget = 0x420;
+            IntPtr moduleAddr = module;
             int entity = 0;
             
                 entity = m.DeployRope<int>((moduleAddr + Statics.signatures.dwLocalPlayer));
@@ -682,31 +687,31 @@ namespace whelper
 
 
                     // Console.WriteLine("Client State: " + clientState);
-                    /* float oAng1 = m.DeployRope<float>((IntPtr)clientState + Statics.signatures.dwClientState_ViewAngles);
+                    /*float oAng1 = m.DeployRope<float>((IntPtr)clientState + Statics.signatures.dwClientState_ViewAngles);
                      float oAng2 = m.DeployRope<float>((IntPtr)clientState + Statics.signatures.dwClientState_ViewAngles + 0x4);
                      float oAng3 = m.DeployRope<float>((IntPtr)clientState + Statics.signatures.dwClientState_ViewAngles + 0x8);
                      Vector3D oAng = new Vector3D();
                      oAng.X = oAng1;
                      oAng.Y = oAng2;
                      oAng.Z = oAng3;*/
-                    // float[] oAng = m.DeployRopes<float>((IntPtr)clientState + Statics.signatures.dwClientState_ViewAngles, 3);
-                    //Console.WriteLine("" + string.Join("; ", oAng));
-                    // float[] newAngles = SimpleMath.Normalized(
-                    // SimpleMath.SmoothnNormalize(oAng,
-                    //  SimpleMath.DifferenceBetween(punch,
-                    // SimpleMath.Normalized(SimpleMath.CalculateAngles(eyePos, GetBonePos(entity, new Random().Next(0, 48)))
-                    //  )), 20));
-                    // float[] calcAng = SimpleMath.CalculateAngles(eyePos, GetBonePos(currentTarget, new Random().Next(0, 38)));
-                    //  float[] normalized = SimpleMath.Normalized(calcAng);
-                    //  float[] diff = SimpleMath.DifferenceBetween(punch, normalized);
-                    // float[] smth = SimpleMath.SmoothnNormalize(oAng, diff, 20);
-                    //  float[] norm2 = SimpleMath.Normalized(smth);
-                    // float[] nAng = norm2;
+                    float[] oAng = m.DeployRopes<float>((IntPtr)clientState + Statics.signatures.dwClientState_ViewAngles, 3);
+                    Console.WriteLine("" + string.Join("; ", oAng));
+                    float[] newAngles = SimpleMath.Normalized(
+                    SimpleMath.SmoothnNormalize(oAng,
+                    SimpleMath.DifferenceBetween(punch,
+                    SimpleMath.Normalized(SimpleMath.CalculateAngles(eyePos, GetBonePos(entity, 8))
+                     )), 20));
+                    float[] calcAng = SimpleMath.CalculateAngles(eyePos, GetBonePos(currentTarget, 8));
+                    float[] normalized = SimpleMath.Normalized(calcAng);
+                    float[] diff = SimpleMath.DifferenceBetween(punch, normalized);
+                    float[] smth = SimpleMath.SmoothnNormalize(oAng, diff, 20);
+                    float[] norm2 = SimpleMath.Normalized(smth);
+                    float[] nAng = norm2;
 
 
-                    // m.CraftRope<float>((IntPtr)(clientState + Statics.signatures.dwClientState_ViewAngles), nAng, 0);
-                    //Console.WriteLine("" + string.Join("; ", nAng));
-                    AimAt(currentTarget, 6, entity, (int)module);
+                    m.CraftRope<float>((IntPtr)(clientState + Statics.netvars.m_viewPunchAngle), nAng, 0);
+                    Console.WriteLine("" + string.Join("; ", nAng));
+                   // AimAt(currentTarget, 6, entity, (int)module);
                     
 
                 }
@@ -721,8 +726,9 @@ namespace whelper
                 
            
         }
-        public static void BAlternate(IntPtr moduleAddr) {
-            IntPtr Offset = moduleAddr + Statics.signatures.dwLocalPlayer;
+        public static void BAlternate() {
+            IntPtr moduleAddr = module;
+            IntPtr Offset = module + Statics.signatures.dwLocalPlayer;
             int player = m.DeployRope<int>(Offset);
             int current = 0x420;
             Offset = (IntPtr)player + Statics.netvars.m_vecOrigin;

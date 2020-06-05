@@ -107,6 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AsmMath.cs" />
+    <Compile Include="Data\Aim.cs" />
     <Compile Include="Dll.cs" />
     <Compile Include="DWrite.cs" />
     <Compile Include="ESPOverlay.cs">

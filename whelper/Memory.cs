@@ -109,7 +109,7 @@ namespace whelper
             return data.First();
         }
         public T[] DeployRopes<T>(IntPtr address, int length) where T : struct {
-            T[] data = new T[Marshal.SizeOf<T>()];
+            T[] data = new T[Marshal.SizeOf<T>() * length];
             IntPtr read = IntPtr.Zero;
             for (int i = 0; i < length; i++) {
                 data[i] = DeployRope<T>(address + i * length);
@@ -128,12 +128,14 @@ namespace whelper
            
             return SendMessage(Handle, address, data, data.Length, out var read);
         }
-        public unsafe bool CraftRope<T>(IntPtr address, T[] value, int startIndex) {
+        public unsafe bool CraftRope<T>(IntPtr address, T[] value, int startIndex) { // 3 * 15
             byte[] buffer = new byte[sizeof(byte)];
             bool result = false;
             for (int i = startIndex; i < value.Length; i++) {
-               result = SendMessage(Handle, address + i * value.Length, buffer, buffer.Length, out var read);
-             
+                T[] data = new T[Marshal.SizeOf<T>()];
+                data[0] = value[i];
+                result = SendMessage(Handle, address + i * value.Length, data, data.Length, out var read);
+                
             }
             return result;
         }

@@ -24,6 +24,8 @@ namespace whelper
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.bunifuiOSSwitch5 = new Bunifu.Framework.UI.BunifuiOSSwitch();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,7 +145,7 @@ namespace whelper
             this.bunifuSlider1.BackgroudColor = System.Drawing.Color.DarkGray;
             this.bunifuSlider1.BorderRadius = 0;
             this.bunifuSlider1.IndicatorColor = System.Drawing.Color.SeaGreen;
-            this.bunifuSlider1.Location = new System.Drawing.Point(12, 155);
+            this.bunifuSlider1.Location = new System.Drawing.Point(12, 179);
             this.bunifuSlider1.MaximumValue = 200;
             this.bunifuSlider1.Name = "bunifuSlider1";
             this.bunifuSlider1.Size = new System.Drawing.Size(192, 30);
@@ -155,7 +157,7 @@ namespace whelper
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(12, 137);
+            this.label5.Location = new System.Drawing.Point(12, 161);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(153, 15);
             this.label5.TabIndex = 14;
@@ -165,7 +167,7 @@ namespace whelper
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(12, 188);
+            this.label6.Location = new System.Drawing.Point(12, 212);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 15);
             this.label6.TabIndex = 15;
@@ -174,7 +176,7 @@ namespace whelper
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(93, 188);
+            this.pictureBox1.Location = new System.Drawing.Point(93, 212);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(23, 15);
             this.pictureBox1.TabIndex = 16;
@@ -191,11 +193,38 @@ namespace whelper
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(62, 131);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(144, 15);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Silent Aimbot (NUMPAD7)";
+            // 
+            // bunifuiOSSwitch5
+            // 
+            this.bunifuiOSSwitch5.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuiOSSwitch5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuiOSSwitch5.BackgroundImage")));
+            this.bunifuiOSSwitch5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuiOSSwitch5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuiOSSwitch5.Location = new System.Drawing.Point(12, 130);
+            this.bunifuiOSSwitch5.Name = "bunifuiOSSwitch5";
+            this.bunifuiOSSwitch5.OffColor = System.Drawing.Color.Gray;
+            this.bunifuiOSSwitch5.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(202)))), ((int)(((byte)(94)))));
+            this.bunifuiOSSwitch5.Size = new System.Drawing.Size(35, 20);
+            this.bunifuiOSSwitch5.TabIndex = 18;
+            this.bunifuiOSSwitch5.Value = false;
+            this.bunifuiOSSwitch5.OnValueChange += new System.EventHandler(this.bunifuiOSSwitch5_OnValueChange);
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(315, 274);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.bunifuiOSSwitch5);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label6);
@@ -237,5 +266,7 @@ namespace whelper
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label7;
+        private BunifuiOSSwitch bunifuiOSSwitch5;
     }
 }

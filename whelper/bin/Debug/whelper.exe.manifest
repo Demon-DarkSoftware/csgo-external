@@ -138,14 +138,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="whelper.exe" size="67000">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="whelper.exe" size="72120">
       <assemblyIdentity name="whelper" version="1.0.2.4" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>b8b9/98qogfOmFIuTR6zeYGWTp5EAR3akP3Tyn35vZk=</dsig:DigestValue>
+        <dsig:DigestValue>AqWiBiV+JfTeRH/a+YaZ9zdwKKX0T/IHxKfpXogqGgg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

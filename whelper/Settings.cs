@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 using dwimI64;
+using whelper.Data;
 
 namespace whelper
 {
@@ -26,14 +27,18 @@ namespace whelper
         public bool GlowEspOn { get; private set; }
         public bool BunnyOn { get; private set; }
         public bool RadarEspOn { get; private set; }
+        public bool SilentOn { get; private set; }
         private Thread Trigger;
         private Thread Glow;
         private Thread Bunny;
         private Thread NoRc;
+        private Thread Silent;
+        private Aim a = new Aim();
         public bool tonce = false;
         public bool gonce = false;
         public bool bonce = false;
         public bool nonce = false;
+        public bool sonce = false;
         public bool shown = false;
         private Thread key;
         private Thread func;
@@ -47,6 +52,7 @@ namespace whelper
             
             func = new Thread(OnOffCheck);
             NoRc = new Thread(Program.LaunchNoRec);
+            Silent = new Thread(a.InitialLoop);
             key = new Thread(KeyCheck);
             key.Start();
             this.TopMost = true;
@@ -281,6 +287,25 @@ namespace whelper
         {
             foreach (KeyValuePair<Keys, Func<bool>> keys in hotkeysFunc) {
                 if (e.KeyCode == keys.Key) keys.Value();
+            }
+        }
+
+        private void bunifuiOSSwitch5_OnValueChange(object sender, EventArgs e)
+        {
+            SilentOn = bunifuiOSSwitch5.Value;
+
+            if (SilentOn && !sonce)
+            {
+                Silent.Start();
+                nonce = true;
+            }
+            else if (SilentOn && sonce)
+            {
+                Silent.Resume();
+            }
+            else if (!SilentOn && sonce)
+            {
+                Silent.Suspend();
             }
         }
     }
